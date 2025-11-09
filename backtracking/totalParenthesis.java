@@ -3,7 +3,7 @@ package backtracking;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class totalParen {
+public class totalParenthesis {
         public static void totalParen(int n, String res,ArrayList<String> visited) {
         if (n==0) {
             if(!visited.contains(res) && isValid(res)){

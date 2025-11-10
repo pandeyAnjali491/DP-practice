@@ -12,6 +12,7 @@ public class nQueens {
             }
         }
         totalWays(arr, 0);
+        // System.out.println("print one sol if it exist: "+oneSol(arr, 0));
         return count;
     }
 
@@ -31,10 +32,31 @@ public class nQueens {
         for (int j = 0; j < arr.length; j++) {
             if (isValid(arr, i, j)) {
                 arr[i][j] = 'Q';
-                totalWays(arr, i + 1);
+                 totalWays(arr, i + 1);
                 arr[i][j] = '.';
             }
         }
+    }
+     public static boolean oneSol(char arr[][], int i) {
+        if (i == arr.length) {
+            for (int j = 0; j < arr.length; j++) {
+                for (int j2 = 0; j2 < arr.length; j2++) {
+                    System.out.print(arr[j][j2]+" ");
+                }
+                System.out.println();
+            }
+            System.out.println();
+            return true;
+        }
+
+        for (int j = 0; j < arr.length; j++) {
+            if (isValid(arr, i, j)) {
+                arr[i][j] = 'Q';
+                if(oneSol(arr, i + 1)) return true;
+                arr[i][j] = '.';
+            }
+        }
+        return false;
     }
 
     public static boolean isValid(char arr[][], int r, int c) {

@@ -1,4 +1,4 @@
-package dp;
+package assg5;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -22,6 +22,7 @@ public class boredom {
         Arrays.fill(dp, -1);
         int points = maxPoint(freq,freq.length-1,dp);
         System.out.println("total points are: "+points);
+        sc.close();
     }
     public static void calFreq(int arr[],int freq[]){
         for (int ele : arr) {

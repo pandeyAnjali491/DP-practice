@@ -1,5 +1,3 @@
-package dp;
-
 import java.util.Arrays;
 
 // if k jumps are allowed - only one parameter is changing so one dimension array

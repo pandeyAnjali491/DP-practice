@@ -1,10 +1,10 @@
-package dp.tabulation;
+package assg8;
 
-public class longestCommonSub {
-    public static int longestCommonSubsequence(String text1, String text2) {
-        int m = text1.length();
-        int n = text2.length();
-        return longSubs(text1,text2,m,n);
+public class deleteOper {
+    public static int minDistance(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+        return m+n-2*longSubs(word1,word2,m,n);
     }
     public static int longSubs(String s1,String s2,int m,int n){
         int dp[][] = new int[m+1][n+1];
@@ -24,17 +24,9 @@ public class longestCommonSub {
                 }
             }
         }
-        System.out.println("-----------------------");
-        for (int i = 0; i < dp.length; i++) {
-            for (int j = 0; j < dp[0].length; j++) {
-                System.out.print(dp[i][j]+" ");
-            }
-            System.out.println();
-        }
-        System.out.println("-----------------------");
         return dp[m][n];
     }
     public static void main(String[] args) {
-        System.out.println(longestCommonSubsequence("rabbbit","rabbit"));
+        System.out.println(minDistance("sea", "eat"));
     }
 }

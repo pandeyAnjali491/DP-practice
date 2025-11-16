@@ -10,7 +10,8 @@ public class longestCommonSub {
         for(int row[]:dp){
             Arrays.fill(row,-1);
         }
-        return longSubs(text1,text2,m,n,dp);
+        int res = longSubs(text1,text2,m,n,dp);
+        return res;
     }
     public static int longSubs(String s1,String s2,int m,int n,int dp[][]){
         if(m==0|| n==0) return 0;
@@ -24,6 +25,6 @@ public class longestCommonSub {
         return dp[m][n];
     }
     public static void main(String[] args) {
-        System.out.println(longestCommonSubsequence("ABCDGH", "ACDGHR"));
+        System.out.println(longestCommonSubsequence("rabbbit", "rabbit"));
     }
 }

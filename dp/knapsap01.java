@@ -1,7 +1,7 @@
 package dp;
 
 public class knapsap01 {
-    public int knapsack(int W, int val[], int wt[]) {
+    public static int knapsack(int W, int val[], int wt[]) {
         // code here
         int dp[][] = new int[val.length][W+1]; 
         for(int i=0;i<dp.length;i++){
@@ -12,7 +12,7 @@ public class knapsap01 {
         return totalPoss(W,val,wt,0,dp);
         
     }
-    public int totalPoss(int w,int val[],int wt[],int i,int dp[][]){
+    public static int totalPoss(int w,int val[],int wt[],int i,int dp[][]){
         if(i==val.length) return 0;
         if(w==0) return 0;
         // choose
@@ -28,6 +28,9 @@ public class knapsap01 {
         return maxProfit;
     }
     public static void main(String[] args) {
-        
+        int w = 4;
+        int val[] = {1, 2, 3};
+        int wt[] = {4, 5, 1};
+        System.out.println(knapsack(w, val, wt));
     }
 }
